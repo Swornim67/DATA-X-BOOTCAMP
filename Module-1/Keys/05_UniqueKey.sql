@@ -54,36 +54,13 @@ INSERT INTO unique_employees VALUES
 -- are unique and do not already exist in the table.
 
 
--- 4. TESTING DUPLICATE PRIMARY KEY
+-- 4. TESTING NULL EMAIL AND PHONE
 
 INSERT INTO unique_employees VALUES
-(101, 'Sita', 'sita@gmail.com', '9822222222', 'Pokhara');
-
--- Error: Duplicate customer_id is not allowed because
--- customer_id is the primary key.
-
-
--- 5. TESTING THE SAME CITY
-
-INSERT INTO unique_employees VALUES
-(104, 'Gita', 'gita@gmail.com', '9844444444', 'Bkt');
-
--- Successful: Duplicate city values are allowed because
--- the city column does not have a UNIQUE constraint.
-
-
--- 6. TESTING NULL EMAIL
-
-INSERT INTO unique_employees VALUES
-(105, 'Mina', NULL, '9855555555', 'Pokhara');
+(105, 'Mina', NULL, NULL, 'Pokhara');
 
 -- Successful: MySQL allows NULL in a nullable UNIQUE column.
 -- Multiple NULL values can be allowed in this column.
-
-
--- CHECKING THE TABLE AFTER THE TESTS
-
-SELECT * FROM unique_employees;
 
 
 -- IMPORTANT NOTES
