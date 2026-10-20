@@ -393,7 +393,7 @@ from payments p
 join orders o
 on p.order_id = o.order_id
 where p.payment_status = 'Success'
-group by p.payment_id;
+group by p.payment_mode;
 
 
 -- 30) Find customer-wise successful payment amount.
