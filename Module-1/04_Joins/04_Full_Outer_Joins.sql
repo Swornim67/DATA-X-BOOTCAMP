@@ -192,8 +192,11 @@ select * from target_customers;
 -- NOTE : IN MYSQL THE FULL OUTER JOIN ISN'T SUPPORTED.
 
 -- 1. Source vs Target Migration Validation.
--- 2. 
-
+-- 2. Customer Data Comparison.
+-- 3. Employee Data Comparison.
+-- 4. Sales Data Comparison.
+-- 5. Data Synchronization Validation.
+-- 6. Report Comparison.
 
 select * from source_customers;
 select * from target_customers;
