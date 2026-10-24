@@ -1,9 +1,9 @@
 -- =========================================================================
 -- database setup & schema creation
 -- =========================================================================
-drop database if exists Full_Outer_Join;
-create database Full_Outer_Join;
-use Full_Outer_Join;
+drop database if exists Cross_Join;
+create database Cross_Join;
+use Cross_Join;
 
 -- customers table
 create table customers (
