@@ -79,7 +79,7 @@ select * from orders;
 -- QUERIES
 -- =========================================================================
 
--- FIND THE CITIES WHERE ORDER STATUS HSOULD BE DELIVERED AND ORDER REVENUE IS MORE THAN 50000 
+-- FIND THE CITIES WHERE ORDER STATUS SHOULD BE DELIVERED AND ORDER REVENUE IS MORE THAN 50000 
 -- SHOW THE CITY AND TOTAL REVENUE,HIGHEST REVENUE FIRST 
 
 select 
@@ -87,14 +87,14 @@ c.city,sum(o.order_amount) as order_revenue
 from customers c 
 join orders o
 on c.customer_id=o.customer_id
-where o.order_status='Delivered'				# WE USE 'WHERE CLAUSE' IN THIS BECAUSE WE WANT ONLY THE SUCCESFULLY DELIVERED CITY.
+where o.order_status='Delivered'				# WE USE 'WHERE CLAUSE' IN THIS BECAUSE WE WANT ONLY THE SUCCESSFULLY DELIVERED CITY.
 group by c.city									# WE USE GROUP BY C.CITY BECAUSE WE HAVE USED THE AGGREGATED FUNCTION IN THIS.
-having sum(o.order_amount) > 50000				# WE CAN'T USE ALIAS IN 'HAVING CLAUSE'BECAUSE IT IS BEFORE THE 'SELECT CLAUSE'. 
+having sum(o.order_amount) > 50000				# WE CAN'T USE ALIAS IN 'HAVING CLAUSE' BECAUSE IT IS BEFORE THE 'SELECT CLAUSE'. 
 order by order_revenue desc;					# WE CAN USE THE ALIAS IN THE 'ORDER BY' BECAUSE IT COMES AFTER 'SELECT CLAUSE'.
 
 # THIS EXAMPLE SHOWS US THE EXECUTION ORDER IN THE SQL .
 
--- BREAK DOWN OF THE EXAMPLE 
+-- BREAKDOWN OF THE EXAMPLE 
 
 # WRITING ORDER IN THE SQL 
 
@@ -104,12 +104,12 @@ order by order_revenue desc;					# WE CAN USE THE ALIAS IN THE 'ORDER BY' BECAUS
 
 -- from , join/on , where , group by , having , select , distinct , order by , limit ,offset
 
--- from= checks the table if it exist in the sql.
+-- from= checks the table if it exist in the sql and to retrieve the data.
 -- join/on = checks on the table and the on condition between the tables.
 -- where = checks for the matching condition given in the query.
--- group by = groups the result based on the column. 
--- having = looks for the column we just made using the alias or column name and then matches the aggregated condition given to it.
--- select = it selects the table.
+-- group by = groups the result based on the column. 			
+-- having = filters the groups based on the condition or uses the aggregated condition like sum(),avg(),count() etc.
+-- select = it selects the column,calculation to be showned in the output.
 -- distinct = looks for the unique and non duplicate things from the table.
 -- order by = looks in the alias table or the column name we just gave in the select clause and applies either desc or asc 
 -- limit = it limits the rows to be seen in the output.
